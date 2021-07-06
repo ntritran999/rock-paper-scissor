@@ -17,6 +17,11 @@ def lose():
 def draw():
     if human_choice==computer_choice:                             return True
 
+def play_again():
+    play_again = input("Do you want to play again? [y]/[n]: ") 
+    if play_again == "n": 
+       print("Thanks for playing!") 
+       break
 # Main loop
 while True: 
     i = randint(1, 3)
@@ -36,19 +41,10 @@ while True:
 
     if win():
         print("YOU WON!")
-        play_again = input("Do you want to play again? [y]/[n]: ")
-        if play_again == "n":
-            print("Thanks for playing!")
-            break
+        play_again()
     if lose():
         print("YOU LOST!")
-        play_again = input("Do you want to play again? [y]/[n]: ")
-        if play_again == "n":
-            print("Thanks for playing!")
-            break     
+        play_again()     
     if draw():
         print("It's a draw!")
-        play_again = input("Do you want to play again? [y]/[n]: ")
-        if play_again == "n":
-            print("Thanks for playing!")
-            break
+        play_again()
