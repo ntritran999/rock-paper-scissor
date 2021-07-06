@@ -18,12 +18,14 @@ def draw():
     if human_choice==computer_choice:                             return True
 
 def play_again():
+    global run
     play_again = input("Do you want to play again? [y]/[n]: ") 
     if play_again == "n": 
        print("Thanks for playing!") 
-       break
+       run = False
 # Main loop
-while True: 
+run = True
+while run: 
     i = randint(1, 3)
     computer_choice = ""
     human_choice = input("Choose 'rock', 'paper' or 'scissor': ")
